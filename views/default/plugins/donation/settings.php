@@ -4,6 +4,7 @@
 	$bank_account = $vars['entity']->bank_account;
 	$bitcoin_code = $vars['entity']->bitcoin_code;
 	$bitcoin_label = $vars['entity']->bitcoin_label;
+	$flattr_code = $vars['entity']->flattr_code;
 
 	echo "<br /><hr>";
 	echo elgg_echo('donation:profile_show');
@@ -99,6 +100,12 @@
 	<?php
 	echo elgg_echo('donation:bitcoin_label');
 	echo elgg_view('input/text', array('name'=>'params[bitcoin_label]', 'value'=>$bitcoin_label));
+	?>
+<br /><br />
+
+	<?php
+	echo elgg_echo('donation:flattr_code');
+	echo elgg_view('input/text', array('name'=>'params[flattr_code]', 'value'=>$flattr_code));
 	?>
 <br /><br />
 

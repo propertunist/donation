@@ -17,6 +17,7 @@ if(!$num_display) $num_display = "8";
 $paypal_code = elgg_get_plugin_setting("paypal_code","donation");
 $bitcoin_code = elgg_get_plugin_setting("bitcoin_code","donation");
 $bitcoin_label = elgg_get_plugin_setting("bitcoin_label","donation");
+$flattr_code = elgg_get_plugin_setting("flattr_code","donation");
 $bank_account = elgg_get_plugin_setting("bank_account","donation");
 
 // Current time
@@ -46,6 +47,12 @@ if($bitcoin_code){
 	echo '<br>';
 	echo '<div class="elgg-bitcoin-button"><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '"><img src="'. $CONFIG->site->url . 'mod/donation/graphics/BC_Rnd_32px.png" alt="we accept bitcoin donations"/></a>';
 	echo '<br/><a href="bitcoin:' . $bitcoin_code . '?label=' . $bitcoin_label . '">' . $bitcoin_code . '</a></div>';
+	echo '<br>';
+}
+if($flattr_code){
+	echo elgg_echo('donation:flattr');
+	echo '<br>';
+	echo '<div class="elgg-flattr-button"><a href="http://flattr.com/thing/' . $flattr_code . '" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a></div>';
 	echo '<br>';
 }
 if($bank_account){
